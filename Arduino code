@@ -1,3 +1,4 @@
+
 //---------------------------------lookup data------------------------------------//
 byte  isin_data[128]=
 {0,  1,   3,   4,   5,   6,   8,   9,   10,  11,  13,  14,  15,  17,  18,  19,  20, 
@@ -28,6 +29,22 @@ void loop()  {
 //delay();
             }
 
+//function that reads data from mic into int array
+
+int [] Readmic(int [] data)
+{
+  for (i= 0; i< data.length(); i++)
+  {
+    data [i] = analogRead(A0);
+  }
+  
+  
+}
+
+//function that takes data array and applies hamming window
+
+
+
 
 
 
@@ -50,6 +67,7 @@ Code by ABHILASH
 Contact:  abhilashpatel121@gmail.com
 Documentation & details: https://www.instructables.com/member/abhilash_patel/instructables/
 
+Update(06/05/21):  Correction made for support on Arduino Due
 */
 
 float Approx_FFT(int in[],int  N,float Frequency)
