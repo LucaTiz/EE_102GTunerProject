@@ -2,7 +2,7 @@
 // written for Arduino uno
 
 //inlcude the liquid crystal library
-
+#include <LiquidCrystal.h>
 // Open source code for example use
 
 #define LENGTH 512
