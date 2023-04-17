@@ -63,7 +63,7 @@ lcd.begin(16, 2);
 lcd.setCursor(0,0); 
 lcd.print(" EE Project"); 
 lcd.setCursor(0,1); 
-lcd.print(” Guitar Tuner”); 
+lcd.print(" Guitar Tuner"); 
 delay(3000); 
 lcd.clear(); 
 lcd.setCursor(2,0); 
