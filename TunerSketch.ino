@@ -198,7 +198,7 @@ Ffreq = -1;
 lcd.setCursor(3,0); 
 lcd.print(freq); 
 lcd.setCursor(11,0); 
-lcd.print(“Hz”); 
+lcd.print("Hz"); 
 lcd.setCursor(0,1); 
 lcd.print(out); 
 lcd.setCursor(7,1); 
