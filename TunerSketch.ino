@@ -3,18 +3,6 @@
 
 //inlcude the liquid crystal library
 
-
-//function
-
-//setup
-
-
-
-//function
-
-
-//loop
-
 // Open source code for example use
 
 #define LENGTH 512
@@ -58,6 +46,7 @@ float B = 30.87;
 //Pin 2 = DB7 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
+//SETUP
 void setup() { 
 Serial.begin(115200);
 
