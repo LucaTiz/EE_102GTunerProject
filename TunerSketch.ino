@@ -37,13 +37,14 @@ float G = 24.50;
 float A = 27.50; 
 float B = 30.87;
 
-// initialize the library with the numbers of the interface pins 
+
 //Pin 12 = RS 
 //Pin 11 = E 
-//Pin 5 = DB4 
-//Pin 4 = DB5 
-//Pin 3 = DB6 
-//Pin 2 = DB7 
+//Pin 5 = DP4 
+//Pin 4 = DP5 
+//Pin 3 = DP6 
+//Pin 2 = DP7 
+// initialize the library with the numbers of the interface pins 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 //SETUP
@@ -53,7 +54,9 @@ Serial.begin(115200);
 analogReference(EXTERNAL); 
 // Connect to 3.3V 
 analogRead(A0);
-
+//We are not connected to A0 so this part can be edited out. 
+ // I will find a better way to interface the pins - Jewel
+ 
 //string output = 0; 
 // set up the LCD’s number of columns and rows: 
 lcd.begin(16, 2); 
@@ -64,13 +67,13 @@ lcd.print(” Guitar Tuner”);
 delay(3000); 
 lcd.clear(); 
 lcd.setCursor(2,0); 
-lcd.print(“[“); 
+lcd.print("["); 
 lcd.setCursor(13,0); 
-lcd.print(“]”); 
+lcd.print("]"); 
 // Print a message to the LCD.
 
 count = 0; 
-} 
+} //end of setup function
 
 float freq; 
 
@@ -139,25 +142,25 @@ Ffreq=getFfreq(freq);
 
 if((15.89<=Ffreq) & (Ffreq<=17.34)){ 
 Note = C; 
-noteName = ‘C’; 
+noteName = 'C'; 
 } else if((17.35<=Ffreq) & (Ffreq<19.475)){ 
 Note = D; 
-noteName = ‘D’; 
+noteName = 'D'; 
 } else if((19.475<=Ffreq) & (Ffreq<21.215)){ 
 Note = E; 
-noteName = ‘E’; 
+noteName = 'E'; 
 } else if((21.215<=Ffreq) & (Ffreq<23.185)){ 
 Note = F; 
-noteName = ‘F’; 
+noteName = 'F'; 
 } else if((23.185<=Ffreq) & (Ffreq<26.00)){ 
 Note = G; 
-noteName = ‘G’; 
+noteName = 'G'; 
 } else if((26.00<=Ffreq) & (Ffreq<29.185)){ 
 Note = A; 
-noteName = ‘A’; 
+noteName = 'A'; 
 } else if((29.185<=Ffreq) & (Ffreq<31.785)){ 
 Note = B; 
-noteName = ‘B’; 
+noteName = 'B’; 
 }
 
 float closeness0 = (Ffreq/Note); 
@@ -165,27 +168,27 @@ int cl1 = 0;
 cl1 = int((closeness0-1)*100); 
 // round to nearest whole number 
 if(Ffreq==Note){
-out = “b—-[[ ]]—-#”;
+out = "b—-[[ ]]—-#”;
 } else if(cl1==-1) {
- out = “b—-[[ ]]—-#”; 
+ out = "b—-[[ ]]—-#”; 
 } else if(cl1==1) {
-out = “b—-[[ ]]—-#”;
+out = "b—-[[ ]]—-#";
 } else if(cl1==-2) {
-out = “b—<<< >—–#”; 
+out = "b—<<< >—–#”; 
 } else if(cl1==2) {
-out = “b—–< >>>—#”; 
+out = "b—–< >>>—#”; 
 } else if(cl1==-3) {
-out = “b–<<<< >—–#”; 
+out = "b–<<<< >—–#”; 
 } else if(cl1==3) { 
-out = “b—–< >>>>–#”; 
+out = "b—–< >>>>–#”; 
 } else if(cl1==-4) {
-out = “b-<<<<< >—–#”; 
+out = "b-<<<<< >—–#”; 
 } else if(cl1==4) {
-out = “b—–< >>>>>-#”; 
+out = "b—–< >>>>>-#”; 
 } else if(cl1==-5) {
-out = “b<<<<<< >—–#”; 
+out = "b<<<<<< >—–#”; 
 } else if(cl1==5) {
-out = “b—–< >>>>>>#”; 
+out = "b—–< >>>>>>#”; 
 } else { 
 Ffreq = -1; 
 } 
