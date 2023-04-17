@@ -160,7 +160,7 @@ Note = A;
 noteName = 'A'; 
 } else if((29.185<=Ffreq) & (Ffreq<31.785)){ 
 Note = B; 
-noteName = 'B’; 
+noteName = 'B'; 
 }
 
 float closeness0 = (Ffreq/Note); 
