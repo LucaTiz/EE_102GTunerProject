@@ -49,4 +49,9 @@ String getCentsOff(float centsOff) { // A function to format the number of cents
     return "  "; // Return two spaces
   } else if (centsOff < 0) { // If the note is flat
     centsOff = abs(centsOff); // Take the absolute value of the number of cents off
-    return String((int) centsOff) + "b"; // Return the number of cents off followed
+    return String((int) centsOff) + "b"; // Return the number of cents off followed by "b" for flat
+  } else { // If the note is sharp
+    return String((int) centsOff) + "#"; // Return the number of cents off followed by "#" for sharp
+  }
+}
+
