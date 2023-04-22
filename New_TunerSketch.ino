@@ -5,7 +5,7 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Initialize the LCD display
 
 void setup() {
   lcd.begin(16, 2); // Set the LCD display to 16x2
-  FreqMeasure.begin(); // Begin the frequency measurement
+  FreqMeasure.begin(0); // Begin the frequency measurement on pin A0
 }
 
 void loop() {
