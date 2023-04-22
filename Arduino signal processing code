@@ -22,11 +22,11 @@ void  setup()
 
 void loop()  {
 
-//
-//
-//float f=Approx_FFT(data,256,100);
-//Serial.println(f);
-//delay();
+int [] data = Readmic(data);
+
+float f=Approx_FFT(data,256,100);
+Serial.println(f);
+delay();
             }
 
 //function that reads data from mic into int array
