@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h> // Include the liquid crystal library
 #include <FreqMeasure.h> // Include the frequency measurement library
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Initialize the LCD display
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Initialize the LCD display to the correct pins connected on the arduino
 
 void setup() {
   lcd.begin(16, 2); // Set the LCD display to 16x2
