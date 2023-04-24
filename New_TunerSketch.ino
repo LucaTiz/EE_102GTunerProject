@@ -3,9 +3,12 @@
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Initialize the LCD display to the correct pins connected on the arduino
 
+
 void setup() {
   lcd.begin(16, 2); // Set the LCD display to 16x2
-  FreqMeasure.begin(A0); // Begin the frequency measurement on pin A0
+  pinMode(8, INPUT); //set digital pin 8 to take input
+  FreqMeasure.begin(); // Begin the frequency measurement from digital pin 8
+  
 }
 
 void loop() {
@@ -15,7 +18,9 @@ void loop() {
     int noteNumber = (int) note % 12; // Get the note number modulo 12
     float centsOff = 1200 * log(frequency / (440 * pow(2, noteNumber - 9))) / log(2); // Calculate the number of cents off from A440
     lcd.setCursor(0, 0); // Set the cursor to the first column of the first row
-    lcd.print("Herz: "); // Display "Herz: "
+    Serial.println(frequency); // print the raw frequency to the serial monitor
+    Serial.print("Hz");
+    lcd.print("Hz: "); // Display "Hz: "
     lcd.print(frequency); // Display the frequency
     lcd.setCursor(0, 1); // Set the cursor to the first column of the second row
     lcd.print("Note: "); // Display "Note: "
